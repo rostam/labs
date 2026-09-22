@@ -1,0 +1,86 @@
+body { background: var(--paper); }
+
+.top {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 14px 32px; border-bottom: 1px solid var(--rule); background: var(--plate);
+}
+.top h1 {
+  margin: 0 auto 0 0;
+  font: 500 var(--fs-lead)/1.2 "IBM Plex Serif", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+.top a { color: var(--ink-soft); font-size: var(--fs-small); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.top a:hover { color: var(--ink); border-color: var(--ink); }
+
+main { max-width: 940px; margin: 0 auto; padding: 0 32px; }
+
+.intro { padding: 52px 0 34px; }
+.intro .lede {
+  font: 400 clamp(17px, 2.3vw, 21px)/1.5 "IBM Plex Serif", Georgia, serif;
+  color: var(--ink);
+  max-width: 54ch;
+  margin: 0;
+}
+
+ol.rack { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+
+.row {
+  display: grid;
+  grid-template-columns: 208px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--rule-fine);
+}
+
+.plate {
+  display: block;
+  background: var(--plate);
+  border: 1px solid var(--rule);
+  padding: 14px;
+  color: var(--sig);
+  background-image:
+    linear-gradient(var(--rule-fine) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule-fine) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.plate svg { display: block; width: 100%; height: auto; }
+
+.pet line { stroke: currentColor; stroke-width: 1.4; stroke-opacity: 0.5; }
+.pet circle { fill: currentColor; }
+
+.spars rect { fill: var(--ink-faint); opacity: 0.85; }
+.spars .c0 { fill: #7A3CB8; } .spars .c1 { fill: #C2410C; } .spars .c2 { fill: #0F766E; }
+.spars .c3 { fill: #B45309; } .spars .c4 { fill: #1C56D6; } .spars .c5 { fill: #B02A6E; }
+.spars .c6 { fill: #4D7C0F; }
+
+.world .land { fill: var(--plate-sunk); stroke: var(--rule); stroke-width: 0.4; }
+.world .dots circle { fill: currentColor; fill-opacity: 0.8; }
+.world .net line { stroke: currentColor; stroke-width: 0.5; stroke-opacity: 0.42; }
+.world .net circle { fill: currentColor; }
+
+.agree rect { stroke: var(--plate); stroke-width: 1.5; }
+.agree .ok { fill: currentColor; fill-opacity: 0.55; }
+.agree .self { fill: var(--rule); }
+
+.text h2 { margin: 0 0 8px; font: 500 22px/1.25 "IBM Plex Serif", Georgia, serif; }
+.text h2 a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--sig); padding-bottom: 1px; }
+.text h2 a:hover { color: var(--sig); }
+.text p { font-size: var(--fs-base); line-height: 1.55; color: var(--ink-soft); margin: 0 0 9px; max-width: 62ch; }
+.text p em { font-style: italic; color: var(--ink); }
+.text .meta { font-size: var(--fs-small); color: var(--ink-faint); margin: 0; }
+.text .meta a { color: var(--ink-faint); border-bottom: 1px solid var(--rule); text-decoration: none; }
+.text .meta a:hover { color: var(--sig); border-color: var(--sig); }
+
+footer { padding: 34px 0 70px; }
+footer p { font-size: var(--fs-small); color: var(--ink-faint); max-width: 60ch; margin: 0; line-height: 1.6; }
+
+a:focus-visible, .plate:focus-visible { outline: 2px solid var(--sig); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  main { padding: 0 16px; }
+  .top { padding: 12px 16px; }
+  .row { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+  .plate { max-width: 230px; }
+  .intro { padding: 32px 0 24px; }
+}
